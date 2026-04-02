@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 public class Trainconsistentmanagementapp {
 
@@ -8,31 +7,30 @@ public class Trainconsistentmanagementapp {
         // Welcome message
         System.out.println("=== Train Consist Management App ===");
 
-        // Initialize passenger bogie list
-        List<String> passengerBogies = new ArrayList<>();
+        // Create LinkedList for train consist
+        LinkedList<String> train = new LinkedList<>();
 
         // Add bogies
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        train.add("Engine");
+        train.add("Sleeper");
+        train.add("AC");
+        train.add("Cargo");
+        train.add("Guard");
 
-        // Display bogies after addition
-        System.out.println("\nAfter adding passenger bogies:");
-        System.out.println(passengerBogies);
+        System.out.println("\nInitial Train Consist:");
+        System.out.println(train);
 
-        // Remove a bogie (AC Chair)
-        passengerBogies.remove("AC Chair");
+        // Insert Pantry Car at position 2 (index starts from 0)
+        train.add(2, "Pantry");
 
-        // Display after removal
-        System.out.println("\nAfter removing AC Chair:");
-        System.out.println(passengerBogies);
+        System.out.println("\nAfter adding Pantry Car at position 2:");
+        System.out.println(train);
 
-        // Check existence of Sleeper
-        boolean exists = passengerBogies.contains("Sleeper");
-        System.out.println("\nDoes Sleeper exist? " + exists);
+        // Remove first and last bogie
+        train.removeFirst();
+        train.removeLast();
 
-        // Final list state
-        System.out.println("\nFinal Bogie List:");
-        System.out.println(passengerBogies);
+        System.out.println("\nAfter removing first and last bogie:");
+        System.out.println(train);
     }
 }
